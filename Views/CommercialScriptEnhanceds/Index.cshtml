@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CommAI.Models.CommercialScriptEnhanced>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 style="color: darkgray">Enhanced Screenplays</h3>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="container-lg container container-fluid">
+            <div class="card bg-secondary mb-3" style="max-width: 50%; max-height:80%;">
+                <div class="card-header">@Html.DisplayFor(modelItem => item.ProductOrServiceName)</div>
+                <div class="card-body">
+                    <h4 class="card-title"> @Html.DisplayFor(modelItem => item.EnhancedScriptTagLine)</h4>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div style="height: 50%;"></div>

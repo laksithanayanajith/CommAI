@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CommAI.Models.CommercialScriptInsights>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 style="color: darkgray">Original Screenplays</h3>
+
+<p>
+    <a asp-area="" asp-controller="CommercialScriptInsights" asp-action="Create" class="btn btn-success" role="button">Create New</a>
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="container-lg container container-fluid">
+            <div class="card bg-secondary mb-3" style="max-width: 50%; max-height:80%;">
+                <div class="card-header">@Html.DisplayFor(modelItem => item.BrandName)</div>
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.ProductOrServiceName) (<i class="text-body-secondary">@Html.DisplayFor(modelItem => item.ProductOrService)</i>)</h4>
+                    <p class="card-text">
+                        <hr />
+                        <i class="text-primary"><strong>"@Html.DisplayFor(modelItem => item.Story)"</strong></i> <br /><br />
+                    </p>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div style="height: 50%;"></div>

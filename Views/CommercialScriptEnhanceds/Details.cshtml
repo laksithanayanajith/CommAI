@@ -1,0 +1,26 @@
+﻿@model CommAI.Models.CommercialScriptEnhanced
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<h1>@Html.DisplayFor(model => model.ProductOrServiceName)</h1>
+<br />
+<div class="card border-light mb-3" style="max-width: 100%; max-width: max-content">
+    <div class="card-header">
+        <h4>@Html.DisplayFor(model => model.EnhancedScriptTagLine)</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayFor(model => model.KeyMessagesOfEnhancedScript)</h5>
+        <p class="card-text">
+            <strong>Advertising Idea: </strong><strong>@Html.DisplayFor(model => model.AdvertisingIdea)</strong> <br /><br />
+            <strong><i class="text-light text-bg-primary">@Html.DisplayFor(model => model.EnhancedScript)</i></strong> <br /><br />
+            <strong>Based News:</strong> <b>@Html.DisplayFor(model => model.NewsCreativeContentBasedNews)</b> <br /><br />
+            <strong>Improvements:</strong> @Html.DisplayFor(model => model.Improvements) <br /><br />
+        </p>
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        <div style="height: 25Px;"></div>
+    </div>
+</div>

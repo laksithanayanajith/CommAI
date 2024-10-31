@@ -1,0 +1,165 @@
+﻿@model CommAI.Models.CommercialScriptInsights
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 style="color: darkgray">Add New Screenplay</h4>
+<hr />
+<div class="row">
+
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BrandName" class="control-label"></label>
+                <input asp-for="BrandName" class="form-control input-group-lg" />
+                <span asp-validation-for="BrandName" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="ProductOrService" class="control-label"></label><br />
+                <div class="btn-group" role="group" aria-label="Product or Service toggle button group">
+                    <input type="radio" class="btn-check" name="ProductOrService" value="Product" id="product" autocomplete="off" />
+                    <label class="btn btn-outline-dark" for="product">Product</label>
+
+                    <input type="radio" class="btn-check" name="ProductOrService" value="Service" id="service" autocomplete="off" />
+                    <label class="btn btn-outline-dark" for="service">Service</label>
+                </div>
+                <span asp-validation-for="ProductOrService" class="text-danger"></span>
+            </div>
+
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="ProductOrServiceName" class="control-label"></label>
+                <input asp-for="ProductOrServiceName" class="form-control input-group-lg" />
+                <span asp-validation-for="ProductOrServiceName" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="ProductOrServiceDescription" class="control-label"></label>
+                <textarea asp-for="ProductOrServiceDescription" class="form-control input-group-lg" rows="4"></textarea>
+                <span asp-validation-for="ProductOrServiceDescription" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="Promise" class="control-label"></label>
+                <input asp-for="Promise" class="form-control input-group-lg" />
+                <span asp-validation-for="Promise" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="ConsumerInsights" class="control-label"></label>
+                <input asp-for="ConsumerInsights" class="form-control input-group-lg" />
+                <span asp-validation-for="ConsumerInsights" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="Reason" class="control-label"></label>
+                <input asp-for="Reason" class="form-control input-group-lg" />
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="ReasonToBelieve" class="control-label"></label>
+                <input asp-for="ReasonToBelieve" class="form-control input-group-lg" />
+                <span asp-validation-for="ReasonToBelieve" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Story" class="control-label"></label>
+                <textarea asp-for="Story" class="form-control input-group-lg" rows="4"></textarea>
+                <span asp-validation-for="Story" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <strong><label asp-for="Script" class="control-label"></label></strong>
+                <textarea asp-for="Script" style="color: darkgray; font-weight: bolder; font-style: italic" class="form-control input-group-lg" rows="4" placeholder="Copy and paste your screenplay here..."></textarea>
+                <span asp-validation-for="Script" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control input-group-lg" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="AgeGroup" class="control-label "></label>
+                <select asp-for="AgeGroup" class="form-control input-group-lg">
+                    <option value="All" selected>All</option>
+                    <option value="Child">Child</option>
+                    <option value="Teen">Teen</option>
+                    <option value="Young Adult">Young Adult</option>
+                    <option value="Adult">Adult</option>
+                    <option value="Senior">Senior</option>
+                </select>
+                <span asp-validation-for="AgeGroup" class="text-danger"></span>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="GenderGroup" class="control-label"></label><br />
+                <div class="btn-group" role="group" aria-label="Gender toggle button group">
+                    <input type="radio" class="btn-check" name="GenderGroup" value="Male Only" id="maleOnly" autocomplete="off" />
+                    <label class="btn btn-outline-dark" for="maleOnly">Male Only</label>
+
+                    <input type="radio" class="btn-check" name="GenderGroup" value="Female Only" id="femaleOnly" autocomplete="off" />
+                    <label class="btn btn-outline-dark" for="femaleOnly">Female Only</label>
+
+                    <input type="radio" class="btn-check" name="GenderGroup" value="Both Male and Female" id="both" autocomplete="off" />
+                    <label class="btn btn-outline-dark" for="both">Both Male and Female</label>
+                </div>
+                <span asp-validation-for="GenderGroup" class="text-danger"></span>
+            </div>
+
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <label asp-for="IdentityUserId" class="control-label" hidden></label>
+                <select asp-for="IdentityUserId" class="form-control" asp-items="ViewBag.IdentityUserId" hidden></select>
+            </div>
+
+            <div style="height: 10px;"></div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-area="" asp-controller="CommercialScriptInsights" asp-action="Index" class="btn btn-secondary" role="button">Back</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <img src="~/images/2.gif" alt="Image" class="img-fluid bg-image">
+    </div>
+</div>
+
+<div style="height: 50px;"></div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

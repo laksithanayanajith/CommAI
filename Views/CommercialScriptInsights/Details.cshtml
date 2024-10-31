@@ -1,0 +1,31 @@
+﻿@model CommAI.Models.CommercialScriptInsights
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Html.DisplayFor(model => model.ProductOrServiceName)</h1>
+<br />
+<div class="card border-light mb-3" style="max-width: 100%; max-width: max-content">
+    <div class="card-header">
+        <h4>The @Html.DisplayFor(model => model.BrandName) @Html.DisplayFor(model => model.ProductOrService)</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Brand: @Html.DisplayFor(model => model.BrandName)</h5>
+        <p class="card-text">
+            <strong>@Html.DisplayFor(model => model.ProductOrServiceDescription)</strong> <br /><br />
+            <strong>Promise:</strong> @Html.DisplayFor(model => model.Promise) <br /><br />
+            <strong>Consumer Insights:</strong> <b>@Html.DisplayFor(model => model.ConsumerInsights)</b> <br /><br />
+            <strong>Reason:</strong> @Html.DisplayFor(model => model.Reason) <br /><br />
+            <strong>Reason to Believe:</strong> @Html.DisplayFor(model => model.ReasonToBelieve) <br /><br />
+            <strong>Story:</strong> @Html.DisplayFor(model => model.Story) <br /><br />
+            <strong>Script:</strong> <b><i class="text-primary">@Html.DisplayFor(model => model.Script)</i></b> <br /><br />
+            <strong>Duration:</strong> @Html.DisplayFor(model => model.Duration) seconds<br /><br />
+            <strong>Target Age Group:</strong> @Html.DisplayFor(model => model.AgeGroup) <br /><br />
+            <strong>Target Gender Group:</strong> @Html.DisplayFor(model => model.GenderGroup)
+        </p>
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        <div style="height: 25Px;"></div>
+    </div>
+</div>

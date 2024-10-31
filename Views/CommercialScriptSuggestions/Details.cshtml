@@ -1,0 +1,23 @@
+﻿@model CommAI.Models.CommercialScriptSuggestion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Html.DisplayFor(model => model.ProductOrServiceName)</h1>
+<br />
+<div class="card border-light mb-3" style="max-width: 100%; max-width: max-content">
+    <div class="card-header">
+        <h4>Number Of Suggestions @Html.DisplayFor(model => model.SuggestionsCount)</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><strong style="font-size:larger;" class="text-danger">@Html.DisplayFor(model => model.NumberOfWeakPoints)</strong> Weak Points</h5>
+        <p class="card-text">
+            <strong>@Html.DisplayFor(model => model.WeakPoints)</strong> <br /><br />
+            <strong>Suggestions: </strong><b class="text-info">@Html.DisplayFor(model => model.Suggestions)</b> <br /><br />
+        </p>
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        <div style="height: 25Px;"></div>
+    </div>
+</div>
